@@ -1,0 +1,52 @@
+﻿<Window x:Class="hCpp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sc="clr-namespace:ScintillaNET;assembly=ScintillaNET"
+        xmlns:local="clr-namespace:hCpp"
+        mc:Ignorable="d"
+        Title="h::C++" Height="580" Width="900" SizeChanged="Window_SizeChanged" MinHeight="80" Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel>
+            <Menu Height="24" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                <MenuItem>
+                    <MenuItem.Header>
+                        <TextBlock Margin="2,2" Text="{DynamicResource File}" />
+                    </MenuItem.Header>
+                    <MenuItem>
+                        <MenuItem.Header>
+                            <TextBlock Margin="2,2" Text="New" />
+                        </MenuItem.Header>
+                        <TextBlock Margin="2,2" Text="Source File" />
+                        <TextBlock Margin="2,2" Text="Header File" />
+                    </MenuItem>
+                    <TextBlock Margin="2,2" Text="Open" />
+                    <Separator />
+                    <TextBlock Margin="2,2" Text="Save" />
+                    <TextBlock Margin="2,2" Text="Save As..." />
+                    <Separator />
+                    <TextBlock Margin="2,2" Text="Close" />
+                    <TextBlock Margin="2,2" Text="Exit" />
+                </MenuItem>
+            </Menu>
+            <DockPanel x:Name="EditorPanel" Height="500">
+                <TabControl x:Name="Editors" SelectionChanged="Editors_SelectionChanged">
+                    <TabControl.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel>
+                                <TextBlock Text="{Binding Path=FileName}" />
+                            </DockPanel>
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                    <TabControl.ContentTemplate>
+                        <DataTemplate>
+                            <WindowsFormsHost />
+                        </DataTemplate>
+                    </TabControl.ContentTemplate>
+                </TabControl>
+            </DockPanel>
+            <StatusBar Height="20"></StatusBar>
+        </StackPanel>
+    </Grid>
+</Window>
