@@ -19,9 +19,9 @@ namespace hCpp
         public MainWindow()
         {
             InitializeComponent();
-            editors.Add(new Editor { FileName = "test1", EditorInstance = new CppEditorBuilder().UseHighlight().UseLineNumber().UseCodeFolding().UseBreakpoints().Build() });
-            editors.Add(new Editor { FileName = "test2", EditorInstance = new CppEditorBuilder().UseHighlight().UseLineNumber().UseCodeFolding().UseBreakpoints().Build() });
-            editors.Add(new Editor { FileName = "test3", EditorInstance = new CppEditorBuilder().UseHighlight().UseLineNumber().UseCodeFolding().UseBreakpoints().Build() });
+            editors.Add(new Editor { FileName = "test1", EditorInstance = new CppEditorBuilder().UseHighlight().UseKeywords().UseLineNumber().UseCodeFolding().UseBreakpoints().Build() });
+            editors.Add(new Editor { FileName = "test2", EditorInstance = new CppEditorBuilder().UseHighlight().UseKeywords().UseLineNumber().UseCodeFolding().UseBreakpoints().Build() });
+            editors.Add(new Editor { FileName = "test3", EditorInstance = new CppEditorBuilder().UseHighlight().UseKeywords().UseLineNumber().UseCodeFolding().UseBreakpoints().Build() });
             Editors.ItemsSource = editors;
         }
 
